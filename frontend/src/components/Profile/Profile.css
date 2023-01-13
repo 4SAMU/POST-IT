@@ -1,0 +1,163 @@
+.container {
+  position: fixed;
+  width: 100vw;
+  height: 100vw;
+
+  background: #ffffff;
+}
+.container1 {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 961px;
+  height: 645px;
+  left: 300px;
+  top: 94px;
+  border-radius: 7px;
+
+  background: #fcf9f9;
+  border: 1px solid #000000;
+}
+.container2 {
+  position: absolute;
+  width: 861px;
+  height: 325px;
+  left: 50px;
+  top: 102px;
+  border-radius: 5px;
+  background: #d9d9d9;
+}
+
+.create_post {
+  position: absolute;
+  width: 77px;
+  height: 15px;
+  left: 314px;
+  top: 140px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 15px;
+  /* identical to box height */
+
+  color: #000000;
+}
+.header {
+  position: absolute;
+  width: 300px;
+  height: 15px;
+  left: 270px;
+  top: 36px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 15px;
+  /* identical to box height */
+
+  color: #000000;
+}
+.time {
+  position: absolute;
+  width: 90px;
+  height: 15px;
+  left: 1133px;
+  top: 43px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  /* identical to box height */
+
+  color: #000000;
+}
+.field {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 462px;
+  height: 33px;
+  left: 48px;
+  top: 484px;
+  border-radius: 10px;
+
+  background: #d9d9d9;
+  border: 1px solid #000000;
+}
+.button {
+  box-sizing: border-box;
+  align-items: center;
+  position: absolute;
+  width: 100px;
+  height: 33px;
+  left: 50px;
+  top: 535px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 15px;
+  border-radius: 10px;
+  /* identical to box height */
+  cursor: pointer;
+  color: #000000;
+
+  background: #d9d9d9;
+  border: 1px solid #000000;
+}
+.button:hover {
+  background-color: chocolate;
+}
+.label {
+  position: absolute;
+  width: 200px;
+  height: 20px;
+  left: 49px;
+  top: 457px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 15px;
+  /* identical to box height */
+
+  color: #000000;
+}
+.header1 {
+  position: absolute;
+  width: 200px;
+  height: 15px;
+  left: 46px;
+  top: 46px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 15px;
+  /* identical to box height */
+
+  color: #000000;
+}
+.header2 {
+  position: absolute;
+  width: 200px;
+  height: 15px;
+  left: 49px;
+  top: 81px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 15px;
+  /* identical to box height */
+
+  color: #000000;
+}
