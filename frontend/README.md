@@ -13,5 +13,4 @@ Events are also emitted when a new profile is created, a new message is sent and
 This app allows users to interact with the Ethereum blockchain, creating and managing their own profiles, posts and message and also allowing them to interact with other users.
 
 
-git clone https://github.com/4SAMU/POST-IT.git
-git checkout Rose
+
