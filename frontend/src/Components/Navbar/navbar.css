@@ -1,0 +1,101 @@
+/** @format */
+
+.navbar {
+  position: fixed;
+  width: 365px;
+  height: 100vh;
+  left: 0px;
+  top: 0px;
+  background: #ffffff;
+  border: none;
+  /* border-right: 1px solid red; */
+}
+
+.userImage {
+  position: absolute;
+  width: 135px;
+  height: 131px;
+  left: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  top: 79px;
+  border-radius: 50%;
+
+  background: #d9d9d9;
+}
+
+.userName {
+  position: absolute;
+  width: 62px;
+  height: 15px;
+  left: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  top: 230px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 15px;
+  /* identical to box height */
+  color: #000000;
+}
+
+.userBio {
+  position: absolute;
+  width: max-content;
+  height: 15px;
+  left: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  top: 257px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  /* identical to box height */
+  color: #000000;
+}
+
+.myProfileBtn {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  width: 180px;
+  height: 35px;
+  left: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  top: 314px;
+  margin-top: 25px;
+  padding-top: 7px;
+  background: #c4c0c0;
+  /*text in button*/
+  font-family: "Inter";
+  font-style: normal;
+  /* font-weight: 400; */
+  font-size: 16px;
+  color: black;
+  border: none;
+  border-radius: 3px;
+}
+
+.homeButton {
+  position: absolute;
+  width: 180px;
+  height: 35px;
+  top: 290px;
+  left: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  background: #086579;
+  /*text in button*/
+  font-family: "Inter";
+  font-style: normal;
+  /* font-weight: 400; */
+  font-size: 16px;
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+}
