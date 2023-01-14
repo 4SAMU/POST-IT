@@ -1,18 +1,20 @@
-import React, { Component } from 'react';
-import './App.css';
-import First from './components/Landingpage/First';
-import Landing from './components/Landingpage/Landing';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <Landing />
-        <br></br>
+
+import React from "react";
+import CreatePost from "./Components/CreatePost/CreatePost";
+import './App.css';
+import First from './Components/Landingpage/First';
+import Landing from './Components/Landingpage/Landing';
+
+const App = () => {
+  return (
+    <div>
+      {/* <CreatePost /> */}
+      <Landing />
         <First />
-      </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
 
 export default App;

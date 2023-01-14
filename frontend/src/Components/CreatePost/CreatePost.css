@@ -1,0 +1,116 @@
+/** @format */
+
+.Page {
+  position: fixed;
+  width: 81vw;
+  height: 100vh;
+  left: 364px;
+  background: #ffffff;
+  overflow-y: hidden;
+}
+
+.posts {
+  position: absolute;
+  width: 1200px;
+  height: 75vh;
+  left: 0px;
+  top: 245px;
+  border: none;
+  /* background: #a30d0d; */
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.getAllPosts {
+  position: relative;
+  width: 1180px;
+  height: 400px;
+  left: 2px;
+  top: 10px;
+  margin-top: 20px;
+  background: #ffffff;
+  border: 1px solid #d9d9d9;
+}
+
+.endOfPosts {
+  position: relative;
+  width: 1180px;
+  height: 80px;
+  left: 2px;
+  top: 10px;
+  margin-top: 20px;
+}
+
+.refreshBtn {
+  position: absolute;
+  width: 128px;
+  height: 32px;
+  left: 0px;
+  top: 20px;
+  background: #086579;
+  border: none;
+  color: #ffffff;
+}
+
+.postImage {
+  position: absolute;
+  width: 1000px;
+  height: 250px;
+  left: 100px;
+  bottom: 10px;
+  background: #d9d9d9;
+}
+
+.userImagePost {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 20px;
+  top: 20px;
+  background: #d9d9d9;
+  border-radius: 50%;
+}
+
+.name {
+  position: absolute;
+  width: max-content;
+  height: 15px;
+  left: 80px;
+  top: 35px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #000000;
+}
+
+.caption {
+  position: absolute;
+  width: 900px;
+  height: 15px;
+  left: 0px;
+  top: -40px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #000000;
+}
+
+.postTime {
+  position: absolute;
+  width: 900px;
+  height: 15px;
+  left: 900px;
+  top: -40px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #000000;
+}
