@@ -1,12 +1,18 @@
-import React from "react";
-import CreatePost from "./Components/CreatePost/CreatePost";
+import React, { Component } from 'react';
+import './App.css';
+import First from './components/First';
+import Landing from './components/Landing';
 
-const App = () => {
-  return (
-    <div>
-      <CreatePost />
-    </div>
-  );
-};
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <Landing />
+        <br></br>
+        <First />
+      </div>
+    );
+  }
+}
 
 export default App;
