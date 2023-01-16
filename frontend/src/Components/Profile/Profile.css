@@ -1,0 +1,215 @@
+.body {
+  position: fixed;
+  width: 100vw;
+  height: 100vw;
+
+  background: #ffffff;
+}
+.container {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 961px;
+  height: 645px;
+  left: 268px;
+  top: 94px;
+
+  background: #ffffff;
+  border: 1px solid #000000;
+}
+.container1 {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 878px;
+  height: 237px;
+  left: 38px;
+  top: 86px;
+
+  background: #ffffff;
+  border: 1px solid #000000;
+}
+.container2 {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 878px;
+  height: 251px;
+  left: 38px;
+  top: 333px;
+
+  background: #ffffff;
+  border: 1px solid #000000;
+}
+.container3 {
+  position: absolute;
+  width: 803px;
+  height: 146px;
+  left: 30px;
+  top: 85px;
+
+  background: #d9d9d9;
+}
+.header {
+  position: absolute;
+  width: 112px;
+  height: 15px;
+  left: 262px;
+  top: 36px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  /* identical to box height */
+
+  color: #000000;
+}
+.date {
+  position: absolute;
+  width: 90px;
+  height: 15px;
+  left: 1133px;
+  top: 43px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  /* identical to box height */
+
+  color: #000000;
+}
+.img1 {
+  position: absolute;
+  width: 135px;
+  height: 131px;
+  left: 26px;
+  top: 9px;
+  border-radius: 50%;
+
+  background: #d9d9d9;
+}
+.img2 {
+  position: absolute;
+  width: 39px;
+  height: 44px;
+  left: 9px;
+  top: 17px;
+  border-radius: 50%;
+  background: #d9d9d9;
+}
+.header2 {
+  position: absolute;
+  width: 57px;
+  height: 15px;
+  left: 46px;
+  top: 46px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  /* identical to box height */
+
+  color: #000000;
+}
+.name {
+  position: absolute;
+  width: 50px;
+  height: 15px;
+  left: 55px;
+  top: 33px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  /* identical to box height */
+
+  color: #000000;
+}
+.labeln {
+  position: absolute;
+  width: 144px;
+  height: 15px;
+  left: 30px;
+  top: 65px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  /* identical to box height */
+
+  color: #000000;
+}
+.date1 {
+  position: absolute;
+  width: 90px;
+  height: 15px;
+  left: 738px;
+  top: 55px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  /* identical to box height */
+
+  color: #000000;
+}
+.name1 {
+  position: absolute;
+  width: 50px;
+  height: 15px;
+  left: 52px;
+  top: 156px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  /* identical to box height */
+
+  color: #000000;
+}
+.label1 {
+  position: absolute;
+  width: 105px;
+  height: 15px;
+  left: 52px;
+  top: 179px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  /* identical to box height */
+
+  color: #000000;
+}
+.label3 {
+  position: absolute;
+  width: 48px;
+  height: 15px;
+  left: 54px;
+  top: 204px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  /* identical to box height */
+
+  color: #000000;
+}
