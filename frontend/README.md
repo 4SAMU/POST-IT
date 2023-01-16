@@ -11,3 +11,6 @@ The app also allows users to send and receive messages, they can create a new me
 Events are also emitted when a new profile is created, a new message is sent and a new post is made. These events can be used to track certain actions within the app and provide additional functionality.
 
 This app allows users to interact with the Ethereum blockchain, creating and managing their own profiles, posts and message and also allowing them to interact with other users.
+
+
+

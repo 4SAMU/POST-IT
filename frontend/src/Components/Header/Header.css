@@ -1,0 +1,80 @@
+/** @format */
+
+.headerComponent {
+  position: absolute;
+  width: 1200px;
+  height: 202px;
+  left: 365px;
+  top: 18px;
+  background: #ffffff;
+}
+
+.greetings {
+  position: absolute;
+  width: max-content;
+  height: 15px;
+  left: 1px;
+  top: 10px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  /* identical to box height */
+
+  color: #000000;
+}
+
+.time {
+  position: absolute;
+  width: max-content;
+  height: 15px;
+  right: 1px;
+  top: 10px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  /* identical to box height */
+
+  color: #000000;
+}
+
+.connectComponent {
+  position: absolute;
+  width: 1200px;
+  height: 126px;
+  left: 1px;
+  top: 90px;
+  background: #d9d9d9;
+}
+
+.connectText {
+  position: absolute;
+  width: max-content;
+  height: 15px;
+  left: 50px;
+  top: 25px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #000000;
+}
+
+.createPostBtn {
+  position: absolute;
+  width: 128px;
+  height: 32px;
+  left: 50px;
+  top: 70px;
+  background: #086579;
+  border: none;
+  color: #ffffff;
+}
