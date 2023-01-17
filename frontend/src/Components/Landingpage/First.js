@@ -4,7 +4,7 @@ const First = () => {
   return (
     <div className='firstpage'>
         <div className='top top2'>
-            <h1 className='title2'>Good Morning, user</h1><p className='date'>12 Jan 14:52:06</p>
+            <h1 className='title2'>Good Morning, user</h1><p className='title2'>12 Jan 14:52:06</p>
         </div>
         <div className='fdiv'>
             <p>Connect to the world, get updates, share whats happening</p>
