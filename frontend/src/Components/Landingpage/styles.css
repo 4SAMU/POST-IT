@@ -53,6 +53,15 @@
   line-height: 20px;
   width: 580px;
 }
+<<<<<<< HEAD
+.group{
+    margin: -200px 0 0 530px;
+    
+    position: absolute;
+    width: 419px;
+    height: 550px;
+    background: url(./group.png);
+=======
 .p {
   padding: 8px;
 }
@@ -63,15 +72,23 @@
   width: 419px;
   height: 550px;
   background: url(./group.png);
+>>>>>>> f8f6a7f1eb7b5052a5c222d88fa35701bf8d60dd
 }
 
 /*------------------First Page---------------------*/
 .firstpage {
   height: 100vh;
 }
+<<<<<<< HEAD
+.top2{
+    width: 1010px;
+    margin:0 0 0 400px;
+   
+=======
 .top2 {
   width: 1010px;
   margin: 0 0 0 400px;
+>>>>>>> f8f6a7f1eb7b5052a5c222d88fa35701bf8d60dd
 }
 .fdiv {
   height: 130px;
@@ -118,3 +135,73 @@
   color: rgb(2, 2, 2);
   font-size: 17px;
 }
+<<<<<<< HEAD
+.crt1{
+    margin-left: 400px;
+    margin-top: 30px;
+    background-color: #e6dddd;
+    color: rgb(2, 2, 2);
+    font-size: 17px;
+}
+/* .firstpage{
+ background-color: aqua;
+} */
+
+/*----------------Media Queries--------------------*/
+
+@media screen and (max-width: 1080px) {
+    .body{
+        padding: 180px 0 0 80px;
+        width: 800px;
+        height: 82vh;
+        }
+    .group{
+        margin: -200px 0 0 500px;
+        width: 380px;
+    }
+/*-----------------------------------------*/
+    .top2{
+        width: 750px;
+        margin:0 0 0 180px;
+    }
+    .fdiv{
+        height: 100px;
+        width: 690px;        
+        margin:1px 0 0 180px;
+    }
+    .p2{
+        text-align: left;
+        padding: 20px 0 0 180px;
+    }
+    .photo{
+        height: 90px;
+        width: 235px;
+        background-color: #e6dddd;
+        text-align: left;    
+        padding-left: 55px;
+        margin:10px 0 0 180px;
+    }
+    .crt1{
+        margin: 20px 0 18px 180px;
+        
+        background-color: #e6dddd;
+        color: rgb(2, 2, 2);
+        font-size: 17px;
+    }
+    .l{
+        padding-top: 40px;
+    }
+    .l2{
+        padding-top: 30px;
+    }
+    .title2{
+        font-weight: 100;
+        font-size: 15px;
+    }
+
+}
+@media screen and (max-width: 900px) {}
+@media screen and (max-width: 768px) {}
+@media screen and (max-width: 450px) {}
+=======
+>>>>>>> f8f6a7f1eb7b5052a5c222d88fa35701bf8d60dd
