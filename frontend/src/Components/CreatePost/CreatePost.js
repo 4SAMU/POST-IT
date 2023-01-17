@@ -1,8 +1,9 @@
 /** @format */
-
-import React from "react";
+import React, { useState } from "react";
 import Header from "../Header/Header";
 import Navbar from "../Navbar/Navbar";
+import { NavLink } from "react-router-dom";
+
 import "./CreatePost.css";
 
 const CreatePost = () => {
@@ -26,8 +27,13 @@ const CreatePost = () => {
               <div className="postTime">12 Jan 10:52:06</div>
             </div>
           </div>
-          <div className="endOfPosts"> seems u have reached end of posts!!
-            <button className="refreshBtn">Refresh Page</button>
+          <div className="endOfPosts">
+            {" "}
+            seems u have reached end of posts!!
+            {/* <button className="refreshBtn">Refresh Page</button> */}
+            <NavLink to="/Home">
+              <button className="refreshBtn">Refresh Page</button>
+            </NavLink>
           </div>
         </div>
       </div>

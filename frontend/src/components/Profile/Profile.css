@@ -1,23 +1,23 @@
-.body {
+.body1 {
   position: fixed;
   width: 100vw;
   height: 100vw;
 
   background: #ffffff;
 }
-.container {
+.contain0 {
   box-sizing: border-box;
 
   position: absolute;
   width: 961px;
   height: 645px;
-  left: 268px;
+  left: 365px;
   top: 94px;
 
   background: #ffffff;
   border: 1px solid #000000;
 }
-.container1 {
+.contain1 {
   box-sizing: border-box;
 
   position: absolute;
@@ -29,7 +29,7 @@
   background: #ffffff;
   border: 1px solid #000000;
 }
-.container2 {
+.contain2 {
   box-sizing: border-box;
 
   position: absolute;
@@ -45,7 +45,7 @@
   position: absolute;
   width: 803px;
   height: 146px;
-  left: 30px;
+  left: 50px;
   top: 85px;
 
   background: #d9d9d9;
@@ -101,7 +101,7 @@
   border-radius: 50%;
   background: #d9d9d9;
 }
-.header2 {
+.head2 {
   position: absolute;
   width: 57px;
   height: 15px;
@@ -117,7 +117,7 @@
 
   color: #000000;
 }
-.name {
+.jina {
   position: absolute;
   width: 50px;
   height: 15px;

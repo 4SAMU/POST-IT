@@ -1,4 +1,4 @@
-.container {
+.contain {
   position: fixed;
   width: 100vw;
   height: 100vw;
@@ -21,9 +21,9 @@
 .container2 {
   position: absolute;
   width: 861px;
-  height: 325px;
+  height: 225px;
   left: 50px;
-  top: 102px;
+  top: 152px;
   border-radius: 5px;
   background: #d9d9d9;
 }
@@ -84,8 +84,19 @@
   height: 33px;
   left: 48px;
   top: 484px;
-  border-radius: 10px;
+  border-radius: 5px;
+  padding-left: 10px;
 
+  background: #d9d9d9;
+  border: 1px solid hsl(140, 80%, 50%);
+}
+.field1 {
+  box-sizing: border-box;
+  cursor: pointer;
+  position: absolute;
+  left: 48px;
+  top: 105px;
+  border-radius: 5px;
   background: #d9d9d9;
   border: 1px solid #000000;
 }

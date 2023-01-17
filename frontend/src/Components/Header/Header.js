@@ -1,6 +1,7 @@
 /** @format */
 
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
@@ -12,7 +13,10 @@ const Header = () => {
         <div className="connectText">
           Connect to the world, get updates, share whats happening
         </div>
-        <button className="createPostBtn">Create Post</button>
+        {/* <button className="createPostBtn">Create Post</button> */}
+        <NavLink to="/createPost">
+          <button className="createPostBtn">Create Post</button>
+        </NavLink>
       </div>
     </div>
   );
