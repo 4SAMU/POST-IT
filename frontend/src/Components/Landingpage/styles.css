@@ -1,44 +1,59 @@
+/** @format */
 
-.landing{
-    background-color:#5DC3DA;
+.landing {
+  position: absolute;
+  background-color: #5dc3da;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
-.body{
-    padding: 200px 0 0 280px;
-    text-align: left;
-    width: 820px;
-    height: 78vh;
+.body {
+  position: absolute;
+  /* padding: 200px 0 0 280px; */
+  top: 200px;
+  text-align: left;
+  width: 820px;
+  height: 78vh;
+  left: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
 }
 
-.title1{
-    color:#086579;
-    font-size: 20px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
+@media screen and (max-width: 1400px) {
+    .body{
+        top: 60px;
+    }
 }
-.top{
-    display: flex;
-    justify-content: space-between;
+
+.title1 {
+  color: #086579;
+  font-size: 20px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
 }
-.btn{
-    color:#fff;
-    width: 167px;
-    height: 38px;
-    background: #086579;
-    border: none;
-    cursor: pointer;
+.top {
+  display: flex;
+  justify-content: space-between;
 }
-.exp{
-    margin-top: 20px;
+.btn {
+  color: #fff;
+  width: 167px;
+  height: 38px;
+  background: #086579;
+  border: none;
+  cursor: pointer;
 }
-.text{
-    padding-top: 40px;
-    line-height: 20px;
-    width: 580px;
+.exp {
+  margin-top: 20px;
 }
-.p{
-    padding: 8px;
+.text {
+  padding-top: 40px;
+  line-height: 20px;
+  width: 580px;
 }
+<<<<<<< HEAD
 .group{
     margin: -200px 0 0 530px;
     
@@ -46,55 +61,81 @@
     width: 419px;
     height: 550px;
     background: url(./group.png);
+=======
+.p {
+  padding: 8px;
+}
+.group {
+  margin: -200px 0 0 530px;
+  background-color: #86acb4;
+  position: absolute;
+  width: 419px;
+  height: 550px;
+  background: url(./group.png);
+>>>>>>> f8f6a7f1eb7b5052a5c222d88fa35701bf8d60dd
 }
 
 /*------------------First Page---------------------*/
-.firstpage{
-    height: 100vh;
+.firstpage {
+  height: 100vh;
 }
+<<<<<<< HEAD
 .top2{
     width: 1010px;
     margin:0 0 0 400px;
    
+=======
+.top2 {
+  width: 1010px;
+  margin: 0 0 0 400px;
+>>>>>>> f8f6a7f1eb7b5052a5c222d88fa35701bf8d60dd
 }
-.fdiv{
-    height: 130px;
-    width: 940px;
-    background-color: #e6dddd;
-    padding: 15px;
-    text-align: left;    
-    padding-left: 55px;
-    margin:10px 0 0 400px;
+.fdiv {
+  height: 130px;
+  width: 940px;
+  background-color: #e6dddd;
+  padding: 15px;
+  text-align: left;
+  padding-left: 55px;
+  margin: 10px 0 0 400px;
 }
-.title2{
-    font-weight: 100;
-    font-size: 18px;
+.title2 {
+  font-weight: 100;
+  font-size: 18px;
 }
-.crt{
-    margin-top: 15px;
+.crt {
+  margin-top: 15px;
 }
-.p2{
-    text-align: left;
-    padding: 30px 0 0 400px;
+.p2 {
+  text-align: left;
+  padding: 30px 0 0 400px;
 }
-.l{
-    padding-top: 67px;
+.l {
+  padding-top: 67px;
 }
-.l2{
-    padding-top: 40px;
+.l2 {
+  padding-top: 40px;
 }
-.photo{
-    height: 130px;
-    width: 235px;
-    background-color: #e6dddd;
-    padding: 15px;
-    text-align: left;    
-    padding-left: 55px;
-    margin:10px 0 0 400px;
+.photo {
+  height: 130px;
+  width: 235px;
+  background-color: #e6dddd;
+  padding: 15px;
+  text-align: left;
+  padding-left: 55px;
+  margin: 10px 0 0 400px;
 }
-.entry{
-    height: 10px;
+.entry {
+  height: 10px;
 }
+.crt1 {
+  margin-left: -867px;
+  margin-top: 30px;
+  background-color: #e6dddd;
+  color: rgb(2, 2, 2);
+  font-size: 17px;
+}
+<<<<<<< HEAD
 .crt1{
     margin-left: 400px;
     margin-top: 30px;
@@ -162,3 +203,5 @@
 @media screen and (max-width: 900px) {}
 @media screen and (max-width: 768px) {}
 @media screen and (max-width: 450px) {}
+=======
+>>>>>>> f8f6a7f1eb7b5052a5c222d88fa35701bf8d60dd
