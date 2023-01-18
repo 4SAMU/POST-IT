@@ -1,0 +1,18 @@
+.dropzone-container {
+    width: 500px;
+    height: 500px;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.dropzone-container p {
+    text-align: center;
+}
