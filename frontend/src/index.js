@@ -12,7 +12,7 @@ import FileUploader from "./UploadFile";
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-      <FileUploader />
+      <App />
     </BrowserRouter>
   </React.StrictMode>
 );

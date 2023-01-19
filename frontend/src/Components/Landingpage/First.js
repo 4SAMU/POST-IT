@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { NFTStorage, File } from "nft.storage/dist/bundle.esm.min.js";
 
 const NEW_TOKEN_KEY =
@@ -11,6 +11,10 @@ const First = () => {
   // const inputFileRef = useRef(null);
   const [busy, setBusy] = useState(false);
   const [fileImage, setFile] = useState();
+  const [date, setDate] = useState();
+  const [time, setTime] = useState();
+
+  const [greeting, setGreeting] = useState();
 
   const [formParams, updateFormParams] = useState({
     name: "",
@@ -80,11 +84,52 @@ const First = () => {
     }
   }
 
+  function getTime() {
+    const currentTime = new Date();
+    setTime(currentTime.toLocaleTimeString());
+    setDate(currentTime.toDateString());
+    if (
+      currentTime.toLocaleTimeString() >= "00:00:00" &&
+      currentTime.toLocaleTimeString() <= "12:00:00"
+    ) {
+      setGreeting("Good Morning");
+    } else if (
+      currentTime.toLocaleTimeString() >= "12:00:00" &&
+      currentTime.toLocaleTimeString() <= "18:00:00"
+    ) {
+      setGreeting("Good Afternoon");
+    } else if (
+      currentTime.toLocaleTimeString() >= "18:00:00" &&
+      currentTime.toLocaleTimeString() <= "20:00:00"
+    ) {
+      setGreeting("Good evining");
+    } else if (
+      currentTime.toLocaleTimeString() >= "20:00:00" &&
+      currentTime.toLocaleTimeString() <= "22:00:00"
+    ) {
+      setGreeting("seems to get really dark");
+    } else if (
+      currentTime.toLocaleTimeString() >= "22:00:00" &&
+      currentTime.toLocaleTimeString() <= "00:00:00"
+    ) {
+      setGreeting("Good night");
+    }
+  }
+  useEffect(() => {
+    getTime();
+    const interval = setInterval(() => {
+      getTime();
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="firstpage">
       <div className="top top2">
-        <h1 className="title2">Good Morning, user</h1>
-        <p className="date">12 Jan 14:52:06</p>
+        <h1 className="title2">{greeting}, user</h1>
+        <p className="date">
+          {date},&nbsp;&nbsp;&nbsp;&nbsp; {time}
+        </p>
       </div>
       <div className="fdiv">
         <p>Connect to the world, get updates, share whats happening</p>
