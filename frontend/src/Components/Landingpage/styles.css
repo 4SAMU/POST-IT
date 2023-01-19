@@ -21,9 +21,9 @@
 }
 
 @media screen and (max-width: 1400px) {
-    .body{
-        top: 60px;
-    }
+  .body {
+    top: 60px;
+  }
 }
 
 .title1 {
@@ -53,15 +53,6 @@
   line-height: 20px;
   width: 580px;
 }
-<<<<<<< HEAD
-.group{
-    margin: -200px 0 0 530px;
-    
-    position: absolute;
-    width: 419px;
-    height: 550px;
-    background: url(./group.png);
-=======
 .p {
   padding: 8px;
 }
@@ -72,23 +63,15 @@
   width: 419px;
   height: 550px;
   background: url(./group.png);
->>>>>>> f8f6a7f1eb7b5052a5c222d88fa35701bf8d60dd
 }
 
 /*------------------First Page---------------------*/
 .firstpage {
   height: 100vh;
 }
-<<<<<<< HEAD
-.top2{
-    width: 1010px;
-    margin:0 0 0 400px;
-   
-=======
 .top2 {
   width: 1010px;
   margin: 0 0 0 400px;
->>>>>>> f8f6a7f1eb7b5052a5c222d88fa35701bf8d60dd
 }
 .fdiv {
   height: 130px;
@@ -117,16 +100,37 @@
   padding-top: 40px;
 }
 .photo {
+  /* position: absolute; */
   height: 130px;
-  width: 235px;
-  background-color: #e6dddd;
+  width: 285px;
+  margin: 10px 0 0 400px;
+  border: 2px dotted gray;
+  border-radius: 6px;
+}
+
+.input_entry {
+  width: 285px;
+  height: 10px;
+  border: 1px solid gray;
+  border-radius: 4px;
   padding: 15px;
   text-align: left;
-  padding-left: 55px;
-  margin: 10px 0 0 400px;
+  margin: 8px 0 0 400px;
+  outline: none;
+
+  /* padding-left: 55px; */
 }
-.entry {
-  height: 10px;
+
+.createButton_ {
+   width: 285px;
+  height: 40px;
+  border: none;
+  border-radius: 4px;
+  margin: 8px 0 0 400px;
+  outline: none;
+  background: #086579;
+  color: #fff;
+  font-size: medium;
 }
 .crt1 {
   margin-left: -867px;
@@ -135,7 +139,13 @@
   color: rgb(2, 2, 2);
   font-size: 17px;
 }
-<<<<<<< HEAD
+
+
+input:focus {
+  border: 1.5px solid #086579;
+}
+
+
 .crt1{
     margin-left: 400px;
     margin-top: 30px;
@@ -203,5 +213,4 @@
 @media screen and (max-width: 900px) {}
 @media screen and (max-width: 768px) {}
 @media screen and (max-width: 450px) {}
-=======
->>>>>>> f8f6a7f1eb7b5052a5c222d88fa35701bf8d60dd
+

@@ -1,3 +1,4 @@
+
 # POST-IT
 
 This social app is built on the Ethereum blockchain using the Solidity programming language. It utilizes smart contracts to manage user profiles, posts, and messages within the app.
@@ -12,5 +13,22 @@ Events are also emitted when a new profile is created, a new message is sent and
 
 This app allows users to interact with the Ethereum blockchain, creating and managing their own profiles, posts and message and also allowing them to interact with other users.
 
+# contract address = 0x56Eea3A7072AF1f10202f325a1942885FF3628BB
 
+# trouble shooting
 
+Cant resolve ipfs-car/blockstore/memory when importing nft.storage?
+
+    -Go to node_modules/nft.storage directory.
+    -Make sure you have ipfs-car/dist/esm/blockstore and ipfs-car/dist/esm/pack. If not, install ipfs-car with npm i ipfs-car. Copy ipfs-car/dist/esm to nft.storage/src.
+    -Inside nft.storage/src, update the ipfs-car import statements in the following files like so:
+
+-Inside platform.web.js, update to this: import { MemoryBlockStore } from 'ipfs-car/dist/esm/blockstore/memory'
+
+-Inside lib.js, update to this: import { pack } from 'ipfs-car/dist/esm/pack'
+
+-Inside token.js, update to this: import { pack } from 'ipfs-car/dist/esm/pack'
+
+-This solved my problem.
+
+[![GitHub Streak](http://github-readme-streak-stats.herokuapp.com?user=4SAMU&theme=dark&date_format=j%20M%5B%20Y%5D)](https://git.io/streak-stats)
