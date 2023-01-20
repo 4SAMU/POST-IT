@@ -116,8 +116,11 @@ contract SocialApp {
         require(profiles[msg.sender].userAddress != address(0));
         // Check if the post id exist
         require(_postId < postCounts[msg.sender]);
-        // Delete the post
-        delete posts[msg.sender][_postId];
+        // Shift all the elements after the one to delete to the left
+        for (uint i = _postId; i < postCounts[msg.sender] - 1; i++) {
+            posts[msg.sender][i] = posts[msg.sender][i + 1];
+        }
+        // Decrement the user's post count
         postCounts[msg.sender]--;
     }
 

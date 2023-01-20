@@ -16,6 +16,9 @@ a {
   display: none;
 } */
 
-button{
+button {
   cursor: pointer;
+}
+button:active {
+  background-color: #586b58; /* Change the background color on click */
 }

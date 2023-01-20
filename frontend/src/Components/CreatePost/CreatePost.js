@@ -53,6 +53,10 @@ const CreatePost = () => {
     updateDataFetched(true);
   }
 
+  function refreshPage() {
+    location.reload();
+  }
+
   useEffect(() => {
     getAllPosts();
   }, []);
@@ -78,7 +82,9 @@ const CreatePost = () => {
           <div className="endOfPosts">
             {" "}
             seems u have reached end of posts!!
-            <button className="refreshBtn">Refresh Page</button>
+            <button className="refreshBtn" onClick={refreshPage}>
+              Refresh Page
+            </button>
           </div>
         </div>
       </div>
