@@ -1,13 +1,13 @@
 .updateA {
   position: fixed;
-  width: 100vw;
+  width: 50vw;
   height: 100vw;
 
   background: #ffffff;
 }
 .heady {
   position: absolute;
-  width: 78px;
+  width: max-content;
   height: 15px;
   left: 264px;
   top: 313px;
@@ -23,7 +23,7 @@
 }
 .labeln {
   position: absolute;
-  width: 78px;
+  width: max-content;
   height: 15px;
   left: 264px;
   top: 354px;
@@ -38,16 +38,92 @@
   color: #000000;
 }
 .updateButton {
-  width: 285px;
-  height: 40px;
-  border: none;
+  position: absolute;
+  width: 100px;
+  height: 32px;
+  left: 264px;
+  top: 638px;
+  align-items: center;
+  background: #d9d9d9;
+  cursor: pointer;
   border-radius: 4px;
-  margin: 8px 0 0 400px;
-  outline: none;
+  border: none;
   background: #086579;
-  color: #fff;
-  font-size: medium;
 }
 .pad {
   padding: 8px;
+}
+.lab {
+  padding-top: 40px;
+}
+.input_word {
+  position: absolute;
+  width: 221px;
+  height: 26px;
+  left: 262px;
+  /* top: 520px; */
+
+  background: #d9d9d9;
+}
+
+.inputArea1 {
+  width: 285px;
+  height: 10px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 15px;
+  text-align: left;
+  margin: 8px 0 0 400px;
+  outline: none;
+}
+
+.labeln1 {
+  position: absolute;
+  width: 60px;
+  height: 15px;
+  left: 264px;
+  top: 500px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  /* identical to box height */
+
+  color: #000000;
+}
+.txtarea1 {
+  position: absolute;
+  width: 221px;
+  height: 26px;
+  left: 262px;
+  top: 520px;
+
+  background: #d9d9d9;
+}
+.txtarea2 {
+  position: absolute;
+  width: 221px;
+  height: 26px;
+  left: 262px;
+  top: 585px;
+
+  background: #d9d9d9;
+}
+.labeln2 {
+  position: absolute;
+  width: 45px;
+  height: 15px;
+  left: 264px;
+  top: 565px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  /* identical to box height */
+
+  color: #000000;
 }
