@@ -25,6 +25,8 @@ const CreatePost = () => {
     );
     let allPosts = await contract.getAllPosts();
 
+    // let allPosts = UnreversedPosts.reverse();
+
     const postData = await Promise.all(
       allPosts.map(async (index) => {
         const [userAddress, text, fileHash, timestamp] = index;
@@ -49,7 +51,7 @@ const CreatePost = () => {
         return arrayPosts;
       })
     );
-    setData(postData);
+    setData(postData.reverse());
     updateDataFetched(true);
   }
 
