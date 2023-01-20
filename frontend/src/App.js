@@ -6,8 +6,8 @@ import "./App.css";
 import First from "./Components/Landingpage/First";
 import Landing from "./Components/Landingpage/Landing";
 import { Route, Routes } from "react-router-dom";
-import Profile from "./components/Profile/Profile";
-import Post from "./components/Post/Post";
+import Profile from "./Components/Profile/Profile";
+import Post from "./Components/Post/Post";
 
 const App = () => {
   return (

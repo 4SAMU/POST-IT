@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Post.css";
 import Navbar from "../../Components/Navbar/Navbar";
+import THeader from "../THeader/THeader";
 
 const Post = () => {
   const [imageSrc, setImageSrc] = useState("");
@@ -17,8 +18,9 @@ const Post = () => {
   return (
     <div className="contain">
       <Navbar />
-      <div className="header">Good morning user</div>
-      <div className="time">12 Jan 14:52:06</div>
+      <THeader />
+      {/* <div className="header">Good morning user</div> */}
+      {/* <div className="time">12 Jan 14:52:06</div> */}
       <div className="container1">
         <label className="label">Add Post Caption</label>
         <label className="header1">Create a Post</label>
