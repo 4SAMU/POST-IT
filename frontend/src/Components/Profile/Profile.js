@@ -48,6 +48,16 @@ const Profile = () => {
           <div className="img2"></div>
           <div className="container3"></div>
         </div>
+        <div className="contain2">
+          <div className="labeln">Hello guys is my Birthday</div>
+          <div className="date1">
+            {date}&nbsp;&nbsp;&nbsp;&nbsp; {time}
+          </div>
+
+          <div className="jina">SAMUEL</div>
+          <div className="img2"></div>
+          <div className="container3"></div>
+        </div>
       </div>
     </div>
   );

@@ -55,7 +55,7 @@ const CreatePost = () => {
             </div>
           </div>
           <div className="getAllPosts">
-            <div className="name">Samuel</div>
+            <div className="name">{userName}</div>
             <div className="userImagePost"></div>
             <div className="postImage">
               <div className="caption">Happy Sato</div>
