@@ -1,15 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Post.css";
+import Navbar from "../../Components/Navbar/Navbar";
 
-const Profile = () => {
+const Post = () => {
+  const [imageSrc, setImageSrc] = useState("");
+
+  function handleChange(event) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setImageSrc(reader.result);
+    };
+    reader.readAsDataURL(file);
+  }
+
   return (
-    <div className="container">
+    <div className="contain">
+      <Navbar />
       <div className="header">Good morning user</div>
       <div className="time">12 Jan 14:52:06</div>
       <div className="container1">
         <label className="label">Add Post Caption</label>
         <label className="header1">Create a Post</label>
         <label className="header2">Browser image</label>
+        <input
+          type="file"
+          className="field1"
+          onChange={handleChange}
+          required
+        ></input>
         <input
           type="text"
           className="field"
@@ -23,4 +42,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Post;

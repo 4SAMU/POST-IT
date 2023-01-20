@@ -1,11 +1,12 @@
 /** @format */
-
-import React, { useEffect, useState } from "react";
+import React, { useState }, { useEffect, useState } from "react";
 import { connectWallet } from "../../utils/ConnectWallet";
 import socialApp from "../../utils/socialApp.json";
 
 import Header from "../Header/Header";
 import Navbar from "../Navbar/Navbar";
+import { NavLink } from "react-router-dom";
+
 import "./CreatePost.css";
 
 const CreatePost = () => {

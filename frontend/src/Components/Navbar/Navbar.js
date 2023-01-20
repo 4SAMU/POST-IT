@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { connectWallet } from "../../utils/ConnectWallet";
 import socialApp from "../../utils/socialApp.json";
 import "./navbar.css";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [userName, setUserName] = useState();
@@ -42,8 +43,14 @@ const Navbar = () => {
       <div className="userName">{userName}</div>
       <div className="userBio">{userBio}</div>
       <button className="homeButton">Home</button>
-      <button className="myProfileBtn">My Profile</button>
-      <button className="myProfileBtn">Create Post</button>
+     
+      {/* <button className="myProfileBtn">My Profile</button> */}
+      <NavLink to="/myProfile">
+        <button className="myProfileBtn">My Profile</button>
+      </NavLink>
+      <NavLink to="/createPost">
+        <button className="myProfileBtn">Create Post</button>
+      </NavLink>
       <button className="myProfileBtn">Messages</button>
     </div>
   );
