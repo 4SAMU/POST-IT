@@ -1,10 +1,12 @@
 /** @format */
 
 import React, { useEffect, useRef, useState } from "react";
-import { NFTStorage, File } from "nft.storage/dist/bundle.esm.min.js";
+import socialApp from "../../utils/socialApp.json";
 
-const NEW_TOKEN_KEY =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDI5MjRBNGI4MzRGMWZDMjg1MzA2QTU1MTllMTBBRDAzZTRFRkFkNjAiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTY3Mzg3ODk4MjY1MSwibmFtZSI6IlNvY2lhbEFwcCJ9.ixJtHq5-qX-NKfwtmWZ9HfIWfLAdHZgnWDcXRepPZ80";
+// import { NFTStorage, File } from "nft.storage/dist/bundle.esm.min.js";
+
+// const NEW_TOKEN_KEY =
+//   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDI5MjRBNGI4MzRGMWZDMjg1MzA2QTU1MTllMTBBRDAzZTRFRkFkNjAiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTY3Mzg3ODk4MjY1MSwibmFtZSI6IlNvY2lhbEFwcCJ9.ixJtHq5-qX-NKfwtmWZ9HfIWfLAdHZgnWDcXRepPZ80";
 
 const First = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -18,7 +20,7 @@ const First = () => {
 
   const [formParams, updateFormParams] = useState({
     name: "",
-    description: "",
+    bio: "",
   });
 
   function inputFileHandler(e) {
@@ -26,61 +28,47 @@ const First = () => {
     setFile(URL.createObjectURL(e.target.files[0]));
   }
 
-  async function IPFSupload(data, file) {
-    try {
-      setBusy(true);
-      // setIPFSerror(null);
-      // setIPFSuploading(true);
-      const client = new NFTStorage({
-        token: NEW_TOKEN_KEY,
-      });
+  async function uploadImage() {
+    const file = selectedFile;
+    const formData = new FormData();
+    formData.append("file", file);
 
-      const metadata = await client.store({
-        name: data.name,
-        description: data.description,
-        image: new File([file], file.name, { type: file.type }),
-      });
-      console.log("IPFS URL for the metadata:", metadata.url);
-      console.log("metadata.json contents:\n", metadata.data);
-      console.log("metadata.json with IPFS gateway URLs:\n", metadata.embed());
-      setBusy(false);
-      return metadata.url;
-    } catch (error) {
-      console.log(error);
-    }
+    const response = await fetch("https://post-it-backend.vercel.app/upload", {
+      method: "POST",
+      body: formData,
+    });
+    const data = await response.json();
+    const imageHash = `https://post-it-backend.vercel.app/${data.fileUrl}`;
+    console.log(imageHash);
+
+    // console.log("form data\n", formData);
+    return imageHash;
   }
 
-  async function mintNFThandler() {
-    const { name, description } = formParams;
+  async function createUserProfile() {
+    const { name, bio } = formParams;
+    const ethers = require("ethers");
 
-    if (!name || !description) {
-      return alert("all field are required");
-    }
+    //After adding your Hardhat network to your metamask, this code will get providers and signers
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    //Pull the deployed contract instance
 
+    let contract = new ethers.Contract(
+      socialApp.address,
+      socialApp.abi,
+      signer
+    );
+    setBusy(true);
+
+    const imageUrl = await uploadImage();
     try {
-      const url = await IPFSupload(
-        {
-          name,
-          description,
-        },
-        selectedFile
-      );
-      //  await MintNfts(url);
-      console.log(url);
+      let tx = await contract.createProfile(name, bio, imageUrl);
+      tx.wait();
 
-      //fetching image data
-      const imageUri = url.slice(7);
-      const metadata = await fetch(`https://nftstorage.link/ipfs/${imageUri}`);
-      const json = await metadata.json();
-      const str = json.image;
-      const mylink = str.slice(7);
-      const imageX =
-        "https://nftstorage.link/ipfs/" + mylink.replace("#", "%23");
-
-      console.log(imageX);
+      console.log("createProfile successfully", tx.wait());
     } catch (error) {
       console.log(error);
-      setBusy(false);
     }
   }
 
@@ -102,7 +90,7 @@ const First = () => {
       currentTime.toLocaleTimeString() >= "18:00:00" &&
       currentTime.toLocaleTimeString() <= "20:00:00"
     ) {
-      setGreeting("Good evining");
+      setGreeting("Good evening");
     } else if (
       currentTime.toLocaleTimeString() >= "20:00:00" &&
       currentTime.toLocaleTimeString() <= "22:00:00"
@@ -161,14 +149,14 @@ const First = () => {
       <input
         type={"text"}
         className="input_entry"
-        value={formParams.description}
-        id={formParams.description}
+        value={formParams.bio}
+        id={formParams.bio}
         onChange={(e) =>
-          updateFormParams({ ...formParams, description: e.target.value })
+          updateFormParams({ ...formParams, bio: e.target.value })
         }
       ></input>
       <div className="p2"></div>
-      <button className="createButton_" onClick={mintNFThandler}>
+      <button className="createButton_" onClick={createUserProfile}>
         {busy ? "loadind..." : "Create now"}
       </button>
     </div>

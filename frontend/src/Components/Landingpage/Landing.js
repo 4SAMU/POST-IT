@@ -37,7 +37,7 @@ const Landing = () => {
     );
     let userProfile = await contract.getProfile(walletAddress.address);
     setUserExistence(userProfile.includes(""));
-    console.log("user image",userProfile);
+    console.log("user image", userProfile);
   }
   getUserProfile();
 
@@ -45,6 +45,14 @@ const Landing = () => {
     connectWebsite();
     getUserProfile();
   }, []);
+
+  // useEffect(() => {
+  //   connectWebsite();
+  //   const interval = setInterval(() => {
+  //     getUserProfile();
+  //   }, 1000);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   return (
     <div className="landing">
