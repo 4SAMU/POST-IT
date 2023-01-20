@@ -1,12 +1,7 @@
 /** @format */
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import socialApp from "../../utils/socialApp.json";
-
-// import { NFTStorage, File } from "nft.storage/dist/bundle.esm.min.js";
-
-// const NEW_TOKEN_KEY =
-//   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDI5MjRBNGI4MzRGMWZDMjg1MzA2QTU1MTllMTBBRDAzZTRFRkFkNjAiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTY3Mzg3ODk4MjY1MSwibmFtZSI6IlNvY2lhbEFwcCJ9.ixJtHq5-qX-NKfwtmWZ9HfIWfLAdHZgnWDcXRepPZ80";
 
 const First = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -115,10 +110,11 @@ const First = () => {
     <div className="firstpage">
       <div className="top top2">
         <h1 className="title2">{greeting}, user</h1>
-        <p className="date">
+        <div className="title2 ">
           {date},&nbsp;&nbsp;&nbsp;&nbsp; {time}
-        </p>
+        </div>
       </div>
+
       <div className="fdiv">
         <p>Connect to the world, get updates, share whats happening</p>
         <button className="btn crt">Create Profile</button>

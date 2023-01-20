@@ -44,7 +44,7 @@
   background: #086579;
   border: none;
   cursor: pointer;
-  border-radius: px;
+  border-radius: 4px;
 }
 .exp {
   margin-top: 20px;
@@ -57,6 +57,7 @@
 .p {
   padding: 8px;
 }
+
 .group {
   margin: -200px 0 0 530px;
   background-color: #86acb4;
@@ -86,6 +87,9 @@
 .title2 {
   font-weight: 100;
   font-size: 18px;
+}
+.label {
+  color: #086579;
 }
 .crt {
   margin-top: 15px;
@@ -215,6 +219,3 @@ input:focus {
 @media screen and (max-width: 450px) {
 }
 
-.time {
-  color: #086579;
-}

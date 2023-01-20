@@ -1,8 +1,6 @@
 /** @format */
 import React, { useEffect, useState } from "react";
-import { connectWallet } from "../../utils/ConnectWallet";
 import socialApp from "../../utils/socialApp.json";
-
 import Header from "../Header/Header";
 import Navbar from "../Navbar/Navbar";
 // import { NavLink } from "react-router-dom";
@@ -10,14 +8,10 @@ import Navbar from "../Navbar/Navbar";
 import "./CreatePost.css";
 
 const CreatePost = () => {
-  const [userExistence, setUserExistence] = useState(false);
-  const [userName, setUserName] = useState();
-  const [userImage, setUserImage] = useState();
-  const [userBio, setUserBio] = useState();
+  const [data, setData] = useState([]);
+  const [dataFetched, updateDataFetched] = useState(false);
 
-  async function getUserProfile() {
-    const walletAddress = await connectWallet();
-
+  async function getAllPosts() {
     const ethers = require("ethers");
     //After adding your Hardhat network to your metamask, this code will get providers and signers
     const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -29,39 +23,58 @@ const CreatePost = () => {
       socialApp.abi,
       signer
     );
-    let userProfile = await contract.getProfile(walletAddress.address);
-    setUserExistence(userProfile);
-    const [name, url, profession] = userProfile;
-    setUserName(name);
-    setUserImage(url);
-    setUserBio(profession);
-    // console.log("ui", url);
+    let allPosts = await contract.getAllPosts();
+
+    const postData = await Promise.all(
+      allPosts.map(async (index) => {
+        const [userAddress, text, fileHash, timestamp] = index;
+        let userProfile = await contract.getProfile(userAddress);
+        const [name, url, profession] = userProfile;
+        let dateTime = ethers.utils.formatUnits(timestamp.toString(), "ether");
+        let date = new Date(dateTime * 10e18 * 100).toDateString();
+        let time = new Date(dateTime * 10e18 * 100).toLocaleTimeString();
+        // console.log(`${date}, ${time}`);
+
+        const postingTime = `${date}, ${time}`;
+
+        const arrayPosts = {
+          name,
+          url,
+          profession,
+          userAddress,
+          text,
+          fileHash,
+          postingTime,
+        };
+        return arrayPosts;
+      })
+    );
+    setData(postData);
+    updateDataFetched(true);
   }
 
   useEffect(() => {
-    getUserProfile();
+    getAllPosts();
   }, []);
 
   return (
     <div>
       <div className="Page">
         <div className="posts">
-          <div className="getAllPosts">
-            <div className="name">{userName}</div>
-            <img src={userImage} alt="" className="userImagePost" />
-            <div className="postImage">
-              <div className="caption">Happy Sato</div>
-              <div className="postTime">12 Jan 10:52:06</div>
+          {data.map((post, index) => (
+            <div key={index} className="getAllPosts">
+              <div>
+                <div className="name">{post.name}</div>
+                <img src={post.url} alt="" className="userImagePost" />
+                <div className="postImage_content">
+                  <div className="caption">{post.text}</div>
+                  <div className="postTime">{post.postingTime}</div>
+                </div>
+                <img className="postImage" src={post.fileHash} />
+              </div>
             </div>
-          </div>
-          <div className="getAllPosts">
-            <div className="name">{userName}</div>
-            <div className="userImagePost"></div>
-            <div className="postImage">
-              <div className="caption">Happy Sato</div>
-              <div className="postTime">12 Jan 10:52:06</div>
-            </div>
-          </div>
+          ))}
+
           <div className="endOfPosts">
             {" "}
             seems u have reached end of posts!!
