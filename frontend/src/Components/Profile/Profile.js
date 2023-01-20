@@ -1,6 +1,8 @@
+/** @format */
+
 import React from "react";
 import "./Profile.css";
-import Navbar from "../../Components/Navbar/Navbar";
+import Navbar from "../Navbar/Navbar";
 
 const Profile = () => {
   return (

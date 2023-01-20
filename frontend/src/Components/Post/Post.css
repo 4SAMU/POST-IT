@@ -1,3 +1,5 @@
+/** @format */
+
 .contain {
   position: fixed;
   width: 100vw;
@@ -11,21 +13,21 @@
   position: absolute;
   width: 961px;
   height: 645px;
-  left: 300px;
+  left: 365px;
   top: 94px;
-  border-radius: 7px;
+  border-radius: 3px;
 
   background: #fcf9f9;
   border: 1px solid #000000;
 }
 .container2 {
   position: absolute;
-  width: 861px;
-  height: 225px;
+  width: 450px;
+  height: 280px;
   left: 50px;
   top: 152px;
   border-radius: 5px;
-  background: #d9d9d9;
+  border: 1px dotted;
 }
 
 .create_post {
@@ -35,7 +37,7 @@
   left: 314px;
   top: 140px;
 
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -48,10 +50,10 @@
   position: absolute;
   width: 300px;
   height: 15px;
-  left: 270px;
+  left: 365px;
   top: 36px;
 
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -67,7 +69,7 @@
   left: 1133px;
   top: 43px;
 
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -78,17 +80,17 @@
 }
 .field {
   box-sizing: border-box;
-
   position: absolute;
   width: 462px;
-  height: 33px;
+  height: 60px;
   left: 48px;
   top: 484px;
-  border-radius: 5px;
-  padding-left: 10px;
-
-  background: #d9d9d9;
-  border: 1px solid hsl(140, 80%, 50%);
+  border-radius: 3px;
+  padding: 15px;
+  text-align: left;
+  border: 1px solid gray;
+  outline: 0;
+  resize: none;
 }
 .field1 {
   box-sizing: border-box;
@@ -97,41 +99,39 @@
   left: 48px;
   top: 105px;
   border-radius: 5px;
-  background: #d9d9d9;
-  border: 1px solid #000000;
+  width: fit-content;
 }
-.button {
+.Postbutton {
   box-sizing: border-box;
   align-items: center;
   position: absolute;
   width: 100px;
   height: 33px;
   left: 50px;
-  top: 535px;
-  font-family: 'Inter';
+  top: 560px;
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 15px;
-  border-radius: 10px;
+  border-radius: 4px;
   /* identical to box height */
   cursor: pointer;
-  color: #000000;
-
-  background: #d9d9d9;
-  border: 1px solid #000000;
+  color: #ffffff;
+  background: #086579;
+  border: none;
 }
-.button:hover {
-  background-color: chocolate;
+.Postbutton:hover {
+  background-color: #086579;
 }
-.label {
+.labelADD {
   position: absolute;
   width: 200px;
   height: 20px;
   left: 49px;
   top: 457px;
 
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -147,7 +147,7 @@
   left: 46px;
   top: 46px;
 
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -163,7 +163,7 @@
   left: 49px;
   top: 81px;
 
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 15px;

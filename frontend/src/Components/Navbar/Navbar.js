@@ -42,8 +42,10 @@ const Navbar = () => {
       <img className="userImage" src={userImage} alt="" />
       <div className="userName">{userName}</div>
       <div className="userBio">{userBio}</div>
-      <button className="homeButton">Home</button>
-     
+      <NavLink to="/Home">
+        <button className="homeButton">Home</button>
+      </NavLink>
+
       {/* <button className="myProfileBtn">My Profile</button> */}
       <NavLink to="/myProfile">
         <button className="myProfileBtn">My Profile</button>
