@@ -15,7 +15,7 @@ const First = () => {
 
   const [formParams, updateFormParams] = useState({
     name: "",
-    bio: ""
+    bio: "",
   });
 
   function inputFileHandler(e) {
@@ -30,7 +30,7 @@ const First = () => {
 
     const response = await fetch("https://post-it-backend.vercel.app/upload", {
       method: "POST",
-      body: formData
+      body: formData,
     });
     const data = await response.json();
     const imageHash = `https://post-it-backend.vercel.app/${data.fileUrl}`;
@@ -109,7 +109,9 @@ const First = () => {
   return (
     <div className="firstpage">
       <div className="top top2">
-        <h1 className="title2">{greeting}, user</h1>
+        <h1 className="title2">
+          {greeting}, {formParams.name}
+        </h1>
         <div className="title2 ">
           {date},&nbsp;&nbsp;&nbsp;&nbsp; {time}
         </div>
