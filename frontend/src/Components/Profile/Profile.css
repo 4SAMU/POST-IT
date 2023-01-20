@@ -8,11 +8,15 @@
 .contain0 {
   box-sizing: border-box;
 
-  position: absolute;
+  position: relative;
   width: 961px;
   height: 645px;
   left: 365px;
   top: 94px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  overflow-y: auto;
+  overflow-x: hidden;
 
   background: #ffffff;
   border: 1px solid #000000;
@@ -31,8 +35,8 @@
 }
 .contain2 {
   box-sizing: border-box;
-
-  position: absolute;
+  margin-top: 20px;
+  position: relative;
   width: 878px;
   height: 251px;
   left: 38px;
@@ -66,22 +70,7 @@
 
   color: #000000;
 }
-.date {
-  position: absolute;
-  width: 90px;
-  height: 15px;
-  left: 1133px;
-  top: 43px;
 
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 15px;
-  /* identical to box height */
-
-  color: #000000;
-}
 .img1 {
   position: absolute;
   width: 135px;
@@ -151,9 +140,9 @@
 }
 .date1 {
   position: absolute;
-  width: 90px;
+  width: max-content;
   height: 15px;
-  left: 738px;
+  left: 700px;
   top: 55px;
 
   font-family: 'Inter';

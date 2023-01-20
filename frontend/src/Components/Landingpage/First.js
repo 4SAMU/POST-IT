@@ -15,7 +15,7 @@ const First = () => {
 
   const [formParams, updateFormParams] = useState({
     name: "",
-    bio: "",
+    bio: ""
   });
 
   function inputFileHandler(e) {
@@ -30,7 +30,7 @@ const First = () => {
 
     const response = await fetch("https://post-it-backend.vercel.app/upload", {
       method: "POST",
-      body: formData,
+      body: formData
     });
     const data = await response.json();
     const imageHash = `https://post-it-backend.vercel.app/${data.fileUrl}`;
@@ -61,7 +61,7 @@ const First = () => {
       let tx = await contract.createProfile(name, bio, imageUrl);
       tx.wait();
 
-      console.log("createProfile successfully", tx.wait());
+      // console.log("createProfile successfully", tx.wait());
     } catch (error) {
       console.log(error);
     }
@@ -121,7 +121,7 @@ const First = () => {
       </div>
       <div>
         <div className="p p2 l">
-          Seems u dont have an account, create one now!
+          Seems you don't have an account, create one now!
         </div>
         <div className="p p2 l3">
           Upload Photo
@@ -153,7 +153,7 @@ const First = () => {
       ></input>
       <div className="p2"></div>
       <button className="createButton_" onClick={createUserProfile}>
-        {busy ? "loadind..." : "Create now"}
+        {busy ? "Loading..." : "Create now"}
       </button>
     </div>
   );

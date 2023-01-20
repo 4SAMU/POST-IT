@@ -1,16 +1,15 @@
-/** @format */
-
 import React, { useState } from "react";
+import Navbar from "../../Components/Navbar/Navbar";
 import "./Post.css";
-import Navbar from "../Navbar/Navbar";
 import socialApp from "../../utils/socialApp.json";
+import THeader from "../THeader/THeader";
 
 const Post = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [fileImage, setFile] = useState();
   const [busy, setBusy] = useState();
   const [formParams, updateFormParams] = useState({
-    caption: "",
+    caption: ""
   });
 
   function inputFileHandler(e) {
@@ -24,7 +23,7 @@ const Post = () => {
 
     const response = await fetch("https://post-it-backend.vercel.app/upload", {
       method: "POST",
-      body: formData,
+      body: formData
     });
     const data = await response.json();
     const imageHash = `https://post-it-backend.vercel.app/${data.fileUrl}`;
@@ -63,8 +62,9 @@ const Post = () => {
   return (
     <div className="contain">
       <Navbar />
-      <div className="header">Good morning user</div>
-      <div className="time">12 Jan 14:52:06</div>
+      <THeader />
+      {/* <div className="header">Good morning user</div> */}
+      {/* <div className="time">12 Jan 14:52:06</div> */}
       <div className="container1">
         <label className="labelADD">Add Post Caption</label>
         <label className="header1">Create a Post</label>
