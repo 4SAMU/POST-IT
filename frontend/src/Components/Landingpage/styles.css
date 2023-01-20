@@ -21,9 +21,9 @@
 }
 
 @media screen and (max-width: 1400px) {
-    .body{
-        top: 60px;
-    }
+  .body {
+    top: 60px;
+  }
 }
 
 .title1 {
@@ -101,16 +101,37 @@
   padding-top: 40px;
 }
 .photo {
+  /* position: absolute; */
   height: 130px;
-  width: 235px;
-  background-color: #e6dddd;
+  width: 285px;
+  margin: 10px 0 0 400px;
+  border: 2px dotted gray;
+  border-radius: 6px;
+}
+
+.input_entry {
+  width: 285px;
+  height: 10px;
+  border: 1px solid gray;
+  border-radius: 4px;
   padding: 15px;
   text-align: left;
-  padding-left: 55px;
-  margin: 10px 0 0 400px;
+  margin: 8px 0 0 400px;
+  outline: none;
+
+  /* padding-left: 55px; */
 }
-.entry {
-  height: 10px;
+
+.createButton_ {
+  width: 285px;
+  height: 40px;
+  border: none;
+  border-radius: 4px;
+  margin: 8px 0 0 400px;
+  outline: none;
+  background: #086579;
+  color: #fff;
+  font-size: medium;
 }
 .crt1 {
   margin-left: -867px;
@@ -118,4 +139,82 @@
   background-color: #e6dddd;
   color: rgb(2, 2, 2);
   font-size: 17px;
+}
+
+input:focus {
+  border: 1.5px solid #086579;
+}
+
+.crt1 {
+  margin-left: 400px;
+  margin-top: 30px;
+  background-color: #e6dddd;
+  color: rgb(2, 2, 2);
+  font-size: 17px;
+}
+/* .firstpage{
+ background-color: aqua;
+} */
+
+/*----------------Media Queries--------------------*/
+
+@media screen and (max-width: 1080px) {
+  .body {
+    padding: 180px 0 0 80px;
+    width: 800px;
+    height: 82vh;
+  }
+  .group {
+    margin: -200px 0 0 500px;
+    width: 380px;
+  }
+  /*-----------------------------------------*/
+  .top2 {
+    width: 750px;
+    margin: 0 0 0 180px;
+  }
+  .fdiv {
+    height: 100px;
+    width: 690px;
+    margin: 1px 0 0 180px;
+  }
+  .p2 {
+    text-align: left;
+    padding: 20px 0 0 180px;
+  }
+  .photo {
+    height: 90px;
+    width: 235px;
+    background-color: #e6dddd;
+    text-align: left;
+    padding-left: 55px;
+    margin: 10px 0 0 180px;
+  }
+  .crt1 {
+    margin: 20px 0 18px 180px;
+
+    background-color: #e6dddd;
+    color: rgb(2, 2, 2);
+    font-size: 17px;
+  }
+  .l {
+    padding-top: 40px;
+  }
+  .l2 {
+    padding-top: 30px;
+  }
+  .title2 {
+    font-weight: 100;
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 900px) {
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 450px) {
+}
+
+.time {
+  color: #086579;
 }
