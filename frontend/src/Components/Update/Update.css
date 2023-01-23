@@ -122,7 +122,7 @@
   top: 374px;
   border: none;
 }
-.head1 {
+.head7 {
   position: absolute;
   width: 980px;
   height: 63px;
@@ -159,4 +159,21 @@
   transform: translateY(-50%);
   transform: translateX(-50%);
   border: nonec;
+}
+
+.wording {
+  position: absolute;
+  width: 337px;
+  height: 15px;
+  left: 120px;
+  top: 15px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  /* identical to box height */
+
+  color: #ffffff;
 }
