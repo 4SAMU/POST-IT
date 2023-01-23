@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import socialApp from "../../utils/socialApp.json";
 import THeader from "../THeader/THeader";
 import "./Update.css";
 const Update = () => {
   const [selectedFile, setSelectedFile] = useState(null);
+  const [busy, setBusy] = useState(false);
   const [fileImage, setFile] = useState();
   const [formParams, updateFormParams] = useState({
     name: "",
@@ -23,9 +25,8 @@ const Update = () => {
     });
     const data = await response.json();
     const imageHash = `https://post-it-backend.vercel.app/${data.fileUrl}`;
-    console.log(imageHash);
+    // console.log(imageHash);
 
-    // console.log("form data\n", formData);
     return imageHash;
   }
   async function editUserProfile() {
@@ -46,7 +47,7 @@ const Update = () => {
 
     const imageUrl = await uploadImage();
     try {
-      let tx = await contract.createProfile(name, bio, imageUrl);
+      let tx = await contract.editProfile(name, bio, imageUrl);
       tx.wait();
 
       // console.log("createProfile successfully", tx.wait());
@@ -62,15 +63,18 @@ const Update = () => {
       </div>
       <div>
         <div className="labeln">Upload Photo</div>
-        <div className="po">
-          <input
-            className="ip"
-            type={"file"}
-            onChange={inputFileHandler}
-          ></input>
-        </div>
+        {fileImage ? (
+          <img className="po" src={fileImage} alt="" />
+        ) : (
+          <div className="po">
+            <input
+              className="ip"
+              type={"file"}
+              onChange={inputFileHandler}
+            ></input>
+          </div>
+        )}
       </div>
-      {/* {fileImage ? <img src={fileImage} className="picha"></img> : ""} */}
 
       <div className="labeln1">Add Name</div>
       <input
@@ -83,8 +87,18 @@ const Update = () => {
         }
       ></input>
       <div className="labeln2">Add Bio </div>
-      <input type="text" className="txtarea2"></input>
-      <button className="updateButton">Update</button>
+      <input
+        type={"text"}
+        className="txtarea2"
+        value={formParams.bio}
+        id={formParams.bio}
+        onChange={(e) =>
+          updateFormParams({ ...formParams, bio: e.target.value })
+        }
+      ></input>
+      <button className="updateButton" onClick={editUserProfile}>
+        {busy ? "Updating..." : "Update"}
+      </button>
     </div>
   );
 };
