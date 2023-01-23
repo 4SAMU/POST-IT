@@ -50,51 +50,86 @@
 
 // export default FileUploader;
 
+// import React, { useState } from "react";
+
+// function VideoPlayer({ videoUrl }) {
+//   return (
+//     <video controls>
+//       <source src={videoUrl} type="video/mp4" />
+//     </video>
+//   );
+// }
+
+// function VideoUploader() {
+//   const [file, setFile] = useState(null);
+//   const [videoUrl, setVideoUrl] = useState(null);
+
+//   const handleFileChange = (event) => {
+//     setFile(event.target.files[0]);
+//   };
+
+//   const handleUpload = async () => {
+//     // Create a new form data object
+//     const data = new FormData();
+//     // Append the file to the form data
+//     data.append("video", file);
+
+//     console.log(data);
+//     // Make a POST request to the server
+//     try {
+//       const response = await fetch("http://localhost:4000/upload", {
+//         method: "POST",
+//         body: data,
+//       });
+//       const json = await response.json();
+//       setVideoUrl(`http://localhost:4000/video/${json.file.filename}`);
+//     } catch (err) {
+//       console.error(err);
+//     }
+//   };
+
+//   return (
+//     <div>
+//       <input type="file" onChange={handleFileChange} />
+//       <button onClick={handleUpload}>Upload</button>
+//       {videoUrl && <VideoPlayer videoUrl={videoUrl} />}
+//     </div>
+//   );
+// }
+
+// export default VideoUploader;
+
 import React, { useState } from "react";
+import EmojiPicker from "react-emoji-picker";
+// import EmojiConvertor from "emoji-js";
+// const emoji = new EmojiConvertor();
+var emoji = require("node-emoji");
 
-function VideoPlayer({ videoUrl }) {
-  return (
-    <video controls>
-      <source src={videoUrl} type="video/mp4" />
-    </video>
-  );
-}
+function TextArea() {
+  const [text, setText] = useState("");
 
-function VideoUploader() {
-  const [file, setFile] = useState(null);
-  const [videoUrl, setVideoUrl] = useState(null);
+  const handleEmojiSelect = (emojiCode) => {
+    const newEmoji = emoji.emojify(emojiCode);
+    console.log("here", newEmoji);
 
-  const handleFileChange = (event) => {
-    setFile(event.target.files[0]);
-  };
-
-  const handleUpload = async () => {
-    // Create a new form data object
-    const data = new FormData();
-    // Append the file to the form data
-    data.append("video", file);
-
-    console.log(data);
-    // Make a POST request to the server
-    try {
-      const response = await fetch("http://localhost:4000/upload", {
-        method: "POST",
-        body: data,
-      });
-      const json = await response.json();
-      setVideoUrl(`http://localhost:4000/video/${json.file.filename}`);
-    } catch (err) {
-      console.error(err);
-    }
+    setText(text + newEmoji);
   };
 
   return (
     <div>
-      <input type="file" onChange={handleFileChange} />
-      <button onClick={handleUpload}>Upload</button>
-      {videoUrl && <VideoPlayer videoUrl={videoUrl} />}
+      {" "}
+      <div className="emoji">
+        <EmojiPicker onSelect={handleEmojiSelect} />
+      </div>
+      <textarea
+        contentEditable={true}
+        suppressContentEditableWarning={true}
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+      />
+      {console.log(text)}
     </div>
   );
 }
 
-export default VideoUploader;
+export default TextArea;

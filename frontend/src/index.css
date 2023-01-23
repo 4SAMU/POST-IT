@@ -21,3 +21,12 @@ button {
 button:active {
   background-color: #586b58; /* Change the background color on click */
 }
+
+/* .emoji {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  width: 50px;
+  height: max-content;
+  background: #586b58;
+} */
