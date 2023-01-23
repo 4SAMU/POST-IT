@@ -20,3 +20,6 @@ It also uses the environment variable to connect to the MongoDB cluster, for sec
 It returns the file URL as http://localhost:5000/files/:id if you want to access the file, if you want to access the file with the hostname you should use process.env.VERCEL_URL + req.headers.host.
 
 You may want to customize this to fit your needs, like changing the routes, adding authentication, and handling errors.
+
+
+#  "mongodb+srv://sam4:samuonfleek@userauth.ruoedti.mongodb.net/?retryWrites=true&w=majority",
