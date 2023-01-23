@@ -10,10 +10,11 @@ const Navbar = () => {
   const [userName, setUserName] = useState();
   const [userImage, setUserImage] = useState();
   const [userBio, setUserBio] = useState();
+  const [userAddress, setUserAddress] = useState();
 
   async function getUserProfile() {
     const walletAddress = await connectWallet();
-
+    setUserAddress(walletAddress.address);
     const ethers = require("ethers");
     //After adding your Hardhat network to your metamask, this code will get providers and signers
     const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -47,7 +48,7 @@ const Navbar = () => {
       </NavLink>
 
       {/* <button className="myProfileBtn">My Profile</button> */}
-      <NavLink to="/myProfile">
+      <NavLink to={`/myProfile/?Adress=${userAddress}&q=myProfile`}>
         <button className="myProfileBtn">My Profile</button>
       </NavLink>
       <NavLink to="/createPost">

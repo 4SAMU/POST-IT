@@ -1,5 +1,6 @@
 /** @format */
 import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import socialApp from "../../utils/socialApp.json";
 import Header from "../Header/Header";
 import Navbar from "../Navbar/Navbar";
@@ -59,12 +60,12 @@ const CreatePost = () => {
     location.reload();
   }
 
- useEffect(() => {
-   const interval = setInterval(() => {
-     getAllPosts();
-   }, 1000);
-   return () => clearInterval(interval);
- }, []);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      getAllPosts();
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div>
@@ -73,8 +74,10 @@ const CreatePost = () => {
           {data.map((post, index) => (
             <div key={index} className="getAllPosts">
               <div>
-                <div className="name">{post.name}</div>
-                <img src={post.url} alt="" className="userImagePost" />
+                <NavLink to={`/myProfile/?Address=${post.userAddress}&q=${post.name}`}>
+                  <div className="name">{post.name}</div>
+                  <img src={post.url} alt="" className="userImagePost" />
+                </NavLink>
                 <div className="postImage_content">
                   <div className="caption">{post.text}</div>
                   <div className="postTime">{post.postingTime}</div>
