@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState } from "react";
 import socialApp from "../../utils/socialApp.json";
 import THeader from "../THeader/THeader";
@@ -8,7 +10,7 @@ const Update = () => {
   const [fileImage, setFile] = useState();
   const [formParams, updateFormParams] = useState({
     name: "",
-    bio: ""
+    bio: "",
   });
   function inputFileHandler(e) {
     setSelectedFile(e.target.files[0]);
@@ -21,7 +23,7 @@ const Update = () => {
 
     const response = await fetch("https://post-it-backend.vercel.app/upload", {
       method: "POST",
-      body: formData
+      body: formData,
     });
     const data = await response.json();
     const imageHash = `https://post-it-backend.vercel.app/${data.fileUrl}`;
@@ -78,7 +80,7 @@ const Update = () => {
         )}
       </div>
 
-      <div className="labeln1">Add Name</div>
+      <div className="labeln1">Edit Name</div>
       <input
         type="text"
         className="txtarea1"
@@ -88,7 +90,7 @@ const Update = () => {
           updateFormParams({ ...formParams, name: e.target.value })
         }
       ></input>
-      <div className="labeln2">Add Bio </div>
+      <div className="labeln2">Edit Bio </div>
       <input
         type={"text"}
         className="txtarea2"
