@@ -48,9 +48,9 @@ const Update = () => {
     const imageUrl = await uploadImage();
     try {
       let tx = await contract.editProfile(name, bio, imageUrl);
-      tx.wait();
+      const txHash = tx.wait();
 
-      // console.log("createProfile successfully", tx.wait());
+      console.log("createProfile successfully", txHash);
     } catch (error) {
       console.log(error);
     }
@@ -58,8 +58,10 @@ const Update = () => {
   return (
     <div className="updateA">
       <THeader />
-      <div className="head1">
-        {/* Connect to the world, get updates,show what's happening */}
+      <div className="head7">
+        <p className="wording">
+          Connect to the world, get updates,show what's happening
+        </p>
       </div>
       <div>
         <div className="labeln">Upload Photo</div>
