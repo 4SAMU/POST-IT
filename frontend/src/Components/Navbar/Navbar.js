@@ -48,7 +48,7 @@ const Navbar = () => {
       </NavLink>
 
       {/* <button className="myProfileBtn">My Profile</button> */}
-      <NavLink to={`/myProfile/?Adress=${userAddress}&q=myProfile`}>
+      <NavLink to={`/myProfile/?Address=${userAddress}&q=myProfile`}>
         <button className="myProfileBtn">My Profile</button>
       </NavLink>
       <NavLink to="/createPost">
