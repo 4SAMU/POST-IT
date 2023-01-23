@@ -50,9 +50,12 @@ const Update = () => {
     const imageUrl = await uploadImage();
     try {
       let tx = await contract.editProfile(name, bio, imageUrl);
-      const txHash = tx.wait();
+      const hash = await tx.wait();
+      if (hash.transactionHash) {
+        window.location.replace("/Home");
+      }
 
-      console.log("createProfile successfully", txHash);
+      // console.log("createProfile successfully", txHash);
     } catch (error) {
       console.log(error);
     }
@@ -84,6 +87,7 @@ const Update = () => {
       <input
         type="text"
         className="txtarea1"
+        placeholder="enter your name"
         value={formParams.name}
         id={formParams.name}
         onChange={(e) =>
@@ -93,6 +97,7 @@ const Update = () => {
       <div className="labeln2">Edit Bio </div>
       <input
         type={"text"}
+        placeholder="enter your bio"
         className="txtarea2"
         value={formParams.bio}
         id={formParams.bio}

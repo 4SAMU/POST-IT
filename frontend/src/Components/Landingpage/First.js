@@ -15,7 +15,7 @@ const First = () => {
 
   const [formParams, updateFormParams] = useState({
     name: "",
-    bio: "",
+    bio: ""
   });
 
   function inputFileHandler(e) {
@@ -30,7 +30,7 @@ const First = () => {
 
     const response = await fetch("https://post-it-backend.vercel.app/upload", {
       method: "POST",
-      body: formData,
+      body: formData
     });
     const data = await response.json();
     const imageHash = `https://post-it-backend.vercel.app/${data.fileUrl}`;
@@ -59,7 +59,10 @@ const First = () => {
     const imageUrl = await uploadImage();
     try {
       let tx = await contract.createProfile(name, bio, imageUrl);
-      tx.wait();
+      const hash = await tx.wait();
+      if (hash.transactionHash) {
+        window.location.replace("/Home");
+      }
 
       // console.log("createProfile successfully", tx.wait());
     } catch (error) {
