@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState } from "react";
 import Navbar from "../../Components/Navbar/Navbar";
 import "./Post.css";
@@ -9,7 +11,7 @@ const Post = () => {
   const [fileImage, setFile] = useState();
   const [busy, setBusy] = useState();
   const [formParams, updateFormParams] = useState({
-    caption: ""
+    caption: "",
   });
 
   function inputFileHandler(e) {
@@ -23,7 +25,7 @@ const Post = () => {
 
     const response = await fetch("https://post-it-backend.vercel.app/upload", {
       method: "POST",
-      body: formData
+      body: formData,
     });
     const data = await response.json();
     const imageHash = `https://post-it-backend.vercel.app/${data.fileUrl}`;
@@ -51,9 +53,11 @@ const Post = () => {
     const imageUrl = await uploadImage();
     try {
       let tx = await contract.createPost(caption, imageUrl);
-      tx.wait();
-
-      console.log("createPost successfully", tx.wait());
+      const hash = await tx.wait();
+      if (hash.transactionHash) {
+        window.location.replace("/Home");
+      }
+      // console.log("createPost successfully", hash.transactionHash);
     } catch (error) {
       console.log(error);
     }
