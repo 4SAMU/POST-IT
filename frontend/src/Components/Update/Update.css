@@ -1,3 +1,5 @@
+/** @format */
+
 .updateA {
   position: fixed;
   width: 50vw;
@@ -12,7 +14,7 @@
   left: 264px;
   top: 313px;
   align-content: center;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -28,7 +30,7 @@
   left: 365px;
   top: 209px;
 
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 17px;
@@ -46,6 +48,7 @@
   top: 661px;
   align-items: center;
   background: #d9d9d9;
+  color: #ffffff;
   cursor: pointer;
   border-radius: 4px;
   border: none;
@@ -59,7 +62,7 @@
   left: 365px;
   top: 512px;
 
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -102,7 +105,7 @@
   left: 365px;
   top: 576px;
 
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -130,7 +133,7 @@
   top: 94px;
   align-items: center;
   background: #086579;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -168,7 +171,7 @@
   left: 120px;
   top: 15px;
 
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 12px;

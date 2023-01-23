@@ -1,62 +1,38 @@
-import React, { useState, useEffect } from "react";
-import "./Profile.css";
+/** @format */
+
+import React from "react";
+import { NavLink } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import THeader from "../THeader/THeader";
+import "./Profile.css";
 
 const Profile = () => {
-  const [time, setTime] = useState();
-  const [date, setDate] = useState();
-
-  function getTime() {
-    const currentTime = new Date();
-    let thisTime = currentTime.toLocaleTimeString("en-US", {
-      hour: "numeric",
-      minute: "numeric",
-      second: "numeric",
-      hour12: false
-    });
-    setTime(thisTime);
-    setDate(currentTime.toDateString());
-  }
-  useEffect(() => {
-    getTime();
-    const interval = setInterval(() => {
-      getTime();
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
+  const im =
+    "https://post-it-backend.vercel.app/files/63cab429245ca518f51f6f16";
   return (
-    <div className="body1">
-      <THeader />
+    <div>
       <Navbar />
-
-      <div className="contain0">
-        <div className="head2">My Profile</div>
-        <div className="contain1">
-          <div className="img1"></div>
-          <div className="name1">SAMUEL</div>
-          <div className="label1">Software engineer</div>
-          <div className="label3">n Posts</div>
+      <THeader />
+      <div className="profilePage">
+        <div className="MyProfileContainer">
+          <img className="MyProfileContainer_image" src={im} alt="" />
+          <div className="MyProfileContainer_name">Max</div>
+          <div className="MyProfileContainer_name">software dev</div>
+          <div className="MyProfileContainer_name">10 posts</div>
+          <NavLink to={`/editProfile`}>
+            <button className="editProfileBtn">Edit profile</button>
+          </NavLink>
         </div>
-        <div className="contain2">
-          <div className="labeln">Hello guys is my Birthday</div>
-          <div className="date1">
-            {date}&nbsp;&nbsp;&nbsp;&nbsp; {time}
+        <div className="profilePage_container">
+          <div className="profilePage_container_posts">
+            <img className="profilePage_image" src={im} alt="" />
+            <div className="profilePage_name">Maxiwell</div>
+            <div className="profilePage_caption">Hello</div>
+            <div className="profilePage_postTime">
+              Thur Jan 20 2023 15:40:25
+            </div>
+            <img className="profilePage_postImage" src={im} alt="" />
           </div>
-
-          <div className="jina">SAMUEL</div>
-          <div className="img2"></div>
-          <div className="container3"></div>
-        </div>
-        <div className="contain2">
-          <div className="labeln">Hello guys is my Birthday</div>
-          <div className="date1">
-            {date}&nbsp;&nbsp;&nbsp;&nbsp; {time}
-          </div>
-
-          <div className="jina">SAMUEL</div>
-          <div className="img2"></div>
-          <div className="container3"></div>
         </div>
       </div>
     </div>
