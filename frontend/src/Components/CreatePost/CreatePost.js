@@ -59,9 +59,12 @@ const CreatePost = () => {
     location.reload();
   }
 
-  useEffect(() => {
-    getAllPosts();
-  }, []);
+ useEffect(() => {
+   const interval = setInterval(() => {
+     getAllPosts();
+   }, 1000);
+   return () => clearInterval(interval);
+ }, []);
 
   return (
     <div>
