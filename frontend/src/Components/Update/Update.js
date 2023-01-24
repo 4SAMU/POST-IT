@@ -75,6 +75,7 @@ const Update = () => {
       // console.log("createProfile successfully", txHash);
     } catch (error) {
       console.log(error);
+      setBusy(false);
     }
   }
   return (
