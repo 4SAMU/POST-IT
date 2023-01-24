@@ -9,38 +9,47 @@ const Update = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [busy, setBusy] = useState(false);
   const [fileImage, setFile] = useState();
-  const [formParams, updateFormParams] = useState({
-    name: "",
-    bio: ""
-  });
 
   /*=============reading from the current location link================*/
   let location = useLocation();
   let params = new URLSearchParams(location.search);
-  let name = params.get("name");
-  let bio = params.get("bio");
+  let PreviousName = params.get("name");
+  let previousBio = params.get("bio");
+
+  const [formParams, updateFormParams] = useState({
+    name: PreviousName,
+    bio: previousBio,
+  });
 
   function inputFileHandler(e) {
     setSelectedFile(e.target.files[0]);
     setFile(URL.createObjectURL(e.target.files[0]));
   }
   async function uploadImage() {
-    const file = selectedFile;
-    const formData = new FormData();
-    formData.append("file", file);
+    if (!selectedFile) {
+      alert("please enter photo");
+    } else {
+      const file = selectedFile;
+      const formData = new FormData();
+      formData.append("file", file);
 
-    const response = await fetch("https://post-it-backend.vercel.app/upload", {
-      method: "POST",
-      body: formData
-    });
-    const data = await response.json();
-    const imageHash = `https://post-it-backend.vercel.app/${data.fileUrl}`;
-    // console.log(imageHash);
+      const response = await fetch(
+        "https://post-it-backend.vercel.app/upload",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+      const data = await response.json();
+      const imageHash = `https://post-it-backend.vercel.app/${data.fileUrl}`;
+      // console.log(imageHash);
 
-    return imageHash;
+      return imageHash;
+    }
   }
   async function editUserProfile() {
     const { name, bio } = formParams;
+    console.log(name);
     const ethers = require("ethers");
 
     //After adding your Hardhat network to your metamask, this code will get providers and signers
@@ -96,8 +105,7 @@ const Update = () => {
         type="text"
         className="txtarea1"
         placeholder="enter your name"
-        // value={formParams.name}
-        defaultValue={name}
+        value={formParams.name}
         id={formParams.name}
         onChange={(e) =>
           updateFormParams({ ...formParams, name: e.target.value })
@@ -108,8 +116,7 @@ const Update = () => {
         type={"text"}
         placeholder="enter your bio"
         className="txtarea2"
-        // value={formParams.bio}
-        defaultValue={bio}
+        value={formParams.bio}
         id={formParams.bio}
         onChange={(e) =>
           updateFormParams({ ...formParams, bio: e.target.value })
