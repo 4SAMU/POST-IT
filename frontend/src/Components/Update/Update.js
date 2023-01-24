@@ -13,11 +13,12 @@ const Update = () => {
   /*=============reading from the current location link================*/
   let location = useLocation();
   let params = new URLSearchParams(location.search);
-  let name = params.get("name");
-  let bio = params.get("bio");
+  let PreviousName = params.get("name");
+  let previousBio = params.get("bio");
+
   const [formParams, updateFormParams] = useState({
-    name: name,
-    bio: bio
+    name: PreviousName,
+    bio: previousBio,
   });
 
   function inputFileHandler(e) {
@@ -25,22 +26,30 @@ const Update = () => {
     setFile(URL.createObjectURL(e.target.files[0]));
   }
   async function uploadImage() {
-    const file = selectedFile;
-    const formData = new FormData();
-    formData.append("file", file);
+    if (!selectedFile) {
+      alert("please enter photo");
+    } else {
+      const file = selectedFile;
+      const formData = new FormData();
+      formData.append("file", file);
 
-    const response = await fetch("https://post-it-backend.vercel.app/upload", {
-      method: "POST",
-      body: formData
-    });
-    const data = await response.json();
-    const imageHash = `https://post-it-backend.vercel.app/${data.fileUrl}`;
-    // console.log(imageHash);
+      const response = await fetch(
+        "https://post-it-backend.vercel.app/upload",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+      const data = await response.json();
+      const imageHash = `https://post-it-backend.vercel.app/${data.fileUrl}`;
+      // console.log(imageHash);
 
-    return imageHash;
+      return imageHash;
+    }
   }
   async function editUserProfile() {
     const { name, bio } = formParams;
+    console.log(name);
     const ethers = require("ethers");
 
     //After adding your Hardhat network to your metamask, this code will get providers and signers
