@@ -13,7 +13,7 @@ const Profile = () => {
   const [userName, setUserName] = useState();
   const [userImage, setUserImage] = useState();
   const [userBio, setUserBio] = useState();
-
+  const [posts, setPosts] = useState();
   const [data, setData] = useState([]);
   const [dataFetched, updateDataFetched] = useState(false);
 
@@ -46,10 +46,20 @@ const Profile = () => {
     setUserBio(bio);
   }
 
+  async function getPostCounts() {
+    try {
+      let tx = await contract.postCounts(UserAddress);
+      // console.log("####", tx);
+      // const [post] = tx;
+      setPosts(tx._hex);
+    } catch (error) {
+      console.log(error);
+    }
+  }
   //function to get specific userPosts
   async function getUserPosts() {
     let allUserPosts = await contract.getUserPosts(UserAddress);
-    console.log(allUserPosts);
+    // console.log(allUserPosts);
 
     // let allUserPosts = UnreversedPosts.reverse();
 
@@ -72,7 +82,7 @@ const Profile = () => {
           userAddress,
           text,
           fileHash,
-          postingTime,
+          postingTime
         };
         return arrayPosts;
       })
@@ -86,6 +96,7 @@ const Profile = () => {
       search;
       getUserProfile();
       getUserPosts();
+      getPostCounts();
     }, 1000);
     return () => clearInterval(interval);
   }, [location]);
@@ -98,7 +109,7 @@ const Profile = () => {
           <img className="MyProfileContainer_image" src={userImage} alt="" />
           <div className="MyProfileContainer_name">{userName}</div>
           <div className="MyProfileContainer_name">{userBio}</div>
-          <div className="MyProfileContainer_name">10 posts</div>
+          <div className="MyProfileContainer_name"> {parseInt(posts)} Posts </div>
           {query === "myProfile" && addressCheck ? (
             <NavLink to={`/editProfile/?name=${userName}&bio=${userBio}`}>
               <button className="editProfileBtn">Edit profile</button>
@@ -114,9 +125,7 @@ const Profile = () => {
                 <img className="profilePage_image" src={post.url} alt="" />
                 <div className="profilePage_name">{post.name}</div>
                 <div className="profilePage_caption">{post.text}</div>
-                <div className="profilePage_postTime">
-                  Thur Jan 20 2023 15:40:25
-                </div>
+                <div className="profilePage_postTime">{post.postingTime}</div>
                 <img
                   className="profilePage_postImage"
                   src={post.fileHash}
