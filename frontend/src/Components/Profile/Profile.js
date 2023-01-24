@@ -19,6 +19,7 @@ const Profile = () => {
 
   /*=============reading from the current location link================*/
   const location = useLocation();
+  // console.log(location);
   const search = location.search;
   const UserAddress = new URLSearchParams(search).get("Address");
   const query = new URLSearchParams(search).get("q");
@@ -109,7 +110,10 @@ const Profile = () => {
           <img className="MyProfileContainer_image" src={userImage} alt="" />
           <div className="MyProfileContainer_name">{userName}</div>
           <div className="MyProfileContainer_name">{userBio}</div>
-          <div className="MyProfileContainer_name"> {parseInt(posts)} Posts </div>
+          <div className="MyProfileContainer_name">
+            {" "}
+            {parseInt(posts)} Posts{" "}
+          </div>
           {query === "myProfile" && addressCheck ? (
             <NavLink to={`/editProfile/?name=${userName}&bio=${userBio}`}>
               <button className="editProfileBtn">Edit profile</button>

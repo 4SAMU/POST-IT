@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import socialApp from "../../utils/socialApp.json";
+import { useLocation } from "react-router-dom";
 import THeader from "../THeader/THeader";
 import "./Update.css";
 const Update = () => {
@@ -10,8 +11,15 @@ const Update = () => {
   const [fileImage, setFile] = useState();
   const [formParams, updateFormParams] = useState({
     name: "",
-    bio: "",
+    bio: ""
   });
+
+  /*=============reading from the current location link================*/
+  let location = useLocation();
+  let params = new URLSearchParams(location.search);
+  let name = params.get("name");
+  let bio = params.get("bio");
+
   function inputFileHandler(e) {
     setSelectedFile(e.target.files[0]);
     setFile(URL.createObjectURL(e.target.files[0]));
@@ -23,7 +31,7 @@ const Update = () => {
 
     const response = await fetch("https://post-it-backend.vercel.app/upload", {
       method: "POST",
-      body: formData,
+      body: formData
     });
     const data = await response.json();
     const imageHash = `https://post-it-backend.vercel.app/${data.fileUrl}`;
@@ -88,7 +96,8 @@ const Update = () => {
         type="text"
         className="txtarea1"
         placeholder="enter your name"
-        value={formParams.name}
+        // value={formParams.name}
+        defaultValue={name}
         id={formParams.name}
         onChange={(e) =>
           updateFormParams({ ...formParams, name: e.target.value })
@@ -99,7 +108,8 @@ const Update = () => {
         type={"text"}
         placeholder="enter your bio"
         className="txtarea2"
-        value={formParams.bio}
+        // value={formParams.bio}
+        defaultValue={bio}
         id={formParams.bio}
         onChange={(e) =>
           updateFormParams({ ...formParams, bio: e.target.value })
