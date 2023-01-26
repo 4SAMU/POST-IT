@@ -1,10 +1,7 @@
 /** @format */
+const toHex = require("number_to_hex");
 
 export async function connectWallet() {
-  const toHex = (num) => {
-    const val = Number(num);
-    return "0x" + val.toString(16);
-  };
   try {
     const { ethereum } = window.ethereum;
     if (ethereum) {
