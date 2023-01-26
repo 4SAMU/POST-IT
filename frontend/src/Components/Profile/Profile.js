@@ -8,6 +8,7 @@ import THeader from "../THeader/THeader";
 import "./Profile.css";
 import socialApp from "../../utils/socialApp.json";
 
+
 const Profile = () => {
   const [addressCheck, setAddressCheck] = useState();
   const [userName, setUserName] = useState();
@@ -83,7 +84,7 @@ const Profile = () => {
           userAddress,
           text,
           fileHash,
-          postingTime
+          postingTime,
         };
         return arrayPosts;
       })

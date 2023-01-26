@@ -4,13 +4,13 @@ import { NavLink } from "react-router-dom";
 import socialApp from "../../utils/socialApp.json";
 import Header from "../Header/Header";
 import Navbar from "../Navbar/Navbar";
-// import { NavLink } from "react-router-dom";
-// import { ethers } from "ethers";
 import "./CreatePost.css";
 
 const CreatePost = () => {
   const [data, setData] = useState([]);
   const [dataFetched, updateDataFetched] = useState(false);
+
+  // console.log(props.caption);
 
   async function getAllPosts() {
     const ethers = require("ethers");
@@ -74,7 +74,9 @@ const CreatePost = () => {
           {data.map((post, index) => (
             <div key={index} className="getAllPosts">
               <div>
-                <NavLink to={`/myProfile/?Address=${post.userAddress}&q=${post.name}`}>
+                <NavLink
+                  to={`/myProfile/?Address=${post.userAddress}&q=${post.name}`}
+                >
                   <div className="name">{post.name}</div>
                   <img src={post.url} alt="" className="userImagePost" />
                 </NavLink>
