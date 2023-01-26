@@ -10,9 +10,7 @@ export async function connectWallet() {
         method: "eth_requestAccounts",
       });
       const address = accounts[0];
-      //   setWalletAdd(
-      //     String(address).substring(0, 5) + "..." + String(address).substring(38)
-      //   );
+
       return { address };
     }
   } catch (error) {
