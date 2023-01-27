@@ -26,11 +26,9 @@
 
 .userName {
   position: absolute;
-  width: 62px;
+  width: max-content;
   height: 15px;
-  left: 50%;
-  transform: translateY(-50%);
-  transform: translateX(-50%);
+  left: 130px;
   top: 230px;
   font-family: "Inter";
   font-style: normal;
@@ -45,9 +43,7 @@
   position: absolute;
   width: max-content;
   height: 15px;
-  left: 50%;
-  transform: translateY(-50%);
-  transform: translateX(-50%);
+  left: 130px;
   top: 257px;
   font-family: "Inter";
   font-style: normal;

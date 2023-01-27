@@ -1,0 +1,41 @@
+.t {
+  position: absolute;
+  width: 961px;
+  height: 126px;
+  left: 365px;
+  top: 4px;
+
+}
+.thead {
+  position: absolute;
+  width: max-content;
+  height: 15px;
+  left: 0px;
+  top: 57px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  /* identical to box height */
+
+  color: #000000;
+}
+
+.tdate {
+  position: absolute;
+  width: max-content;
+  height: 15px;
+  right: 0px;
+  top: 43px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  /* identical to box height */
+
+  color: #000000;
+}

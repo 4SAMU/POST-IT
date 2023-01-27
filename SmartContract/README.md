@@ -12,4 +12,7 @@ npx hardhat test
 REPORT_GAS=true npx hardhat test
 npx hardhat node
 npx hardhat run scripts/deploy.js
+npx hardhat verify <contract_add> --network <networkname>
 ```
+
+# 0x757b733b45a94c6cbed72d58f00657aa28628967
