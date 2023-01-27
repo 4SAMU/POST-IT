@@ -53,7 +53,6 @@
   line-height: 20px;
   width: 580px;
 }
-<<<<<<< HEAD
 .group{
     margin: -200px 0 0 530px;
     
@@ -61,7 +60,6 @@
     width: 419px;
     height: 550px;
     background: url(./group.png);
-=======
 .p {
   padding: 8px;
 }
@@ -72,7 +70,6 @@
   width: 419px;
   height: 550px;
   background: url(./group.png);
->>>>>>> f8f6a7f1eb7b5052a5c222d88fa35701bf8d60dd
 }
 
 /*------------------First Page---------------------*/
